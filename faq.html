@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأسئلة الشائعة | علامة مِنك</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        :root {
+            --primary-coral: #E76F51;
+            --secondary-green: #2A9D8F;
+            --bg-warm: #FAEDCD;
+            --text-dark: #264653;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-warm);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+        .faq-wrapper {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .faq-title {
+            text-align: center;
+            color: var(--primary-coral);
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        /* تصميم قائمة الأسئلة المنسدلة */
+        .faq-item {
+            background: #ffffff;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(38, 70, 83, 0.03);
+            border: 1px solid rgba(231, 111, 81, 0.05);
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            background-color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+        .faq-question:hover {
+            background-color: #fdfbf7;
+        }
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            background: #fdfbf7;
+            border-top: 0 solid rgba(0,0,0,0.02);
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            opacity: 0.9;
+        }
+        /* وسم السهم التفاعلي */
+        .faq-icon {
+            transition: transform 0.3s ease;
+            color: var(--secondary-green);
+            font-weight: bold;
+        }
+        /* كلاس التفعيل عبر الجافاسكريبت */
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* تمدد تلقائي مريح للمحتوى */
+            padding: 20px;
+            border-top-width: 1px;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+
+    <header style="background: white; padding: 15px 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center;">
+        <nav style="display: flex; justify-content: space-between; align-items: center; max-width: 1000px; margin: 0 auto; direction: rtl;">
+            <a href="index.html" style="font-weight: 700; color: var(--primary-coral); text-decoration: none; font-size: 1.5rem;">مِنك</a>
+            <div style="display: flex; gap: 20px;">
+                <a href="index.html" style="text-decoration: none; color: var(--text-dark); font-weight: 600;">الرئيسية</a>
+                <a href="index.html#products-section" style="text-decoration: none; color: var(--text-dark); font-weight: 600;">منتجاتنا</a>
+                <a href="about.html" style="text-decoration: none; color: var(--text-dark); font-weight: 600;">من نحن</a>
+                <a href="order.html" style="text-decoration: none; color: var(--text-dark); font-weight: 600;">طلب خاص</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="faq-wrapper">
+        <h1 class="faq-title">الأسئلة الشائعة</h1>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>كم تستغرق مدة تنفيذ الطلبات المخصصة؟</span>
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>لأن منتجاتنا تُصنع وتُطبع يدوياً بعناية بالغة وحسب الاسم والطلب، فإن مدة العمل والتحضير تتراوح بين 3 إلى 7 أيام عمل، حسب حجم الطلب ونوع المنتج، وذلك قبل تسليمه لشركة التوصيل.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>هل تتوفر خدمة التوصيل لجميع مناطق سلطنة عُمان؟</span>
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>نعم، يسعدنا توفير الشحن والتوصيل إلى كافة محافظات وولايات السلطنة عبر شركات الشحن المحلية المعتمدة، ويتم التنسيق لتحديد نقطة الاستلام أو التوصيل للمنزل عند تأكيد الطلب.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>ما هي طرق الدفع المتاحة؟</span>
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>نعتمد الدفع عبر التحويل البنكي المباشر (مثل بنك مسقط أو تطبيقات الدفع عبر الهاتف) بعد اعتماد تفاصيل التخصيص والاسم وقبل البدء الفعلي في تنفيذ المنتج اليدوي.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>كيف يعمل منتج "الورق القابل للزراعة"؟</span>
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>هو ورق مستدام ومصنوع يدوياً ومدمج داخله بذور نباتية صغيرة. بعد الانتهاء من قراءة البطاقة أو استخدام العبوة، يمكنكِ تقطيع الورق ووضعه تحت طبقة رقيقة من التربة وسقايته بالماء بانتظام لينمو ويتحول إلى نبات أخضر جميل.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>هل يمكنني طلب كميات كبيرة للتوزيعات أو المناسبات؟</span>
+                <span class="faq-icon">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>نعم بكل تأكيد! يسعدنا جداً تلبية طلبات الجملة والتوزيعات للمدارس، الشركات، والمناسبات كاليوم الوطني ورمضان. يرجى فقط التواصل معنا قبل وقت كافٍ من المناسبة لضمان جودة وسرعة التنفيذ اليدوي.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                
+                // إغلاق أي سؤال آخر مفتوح حالياً لضمان مظهر منظم
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+
+                // فتح أو إغلاق السؤال الحالي
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <footer style="text-align: center; padding: 30px; background: white; margin-top: 40px; font-size: 0.9rem; color: var(--text-dark); opacity: 0.8;">
+        <p>© 2026 علامة مِنك. جميع الحقوق محفوظة.</p>
+        <p>حساب الإنستغرام: <a href="https://www.instagram.com/mink._1?igsh=ODhpeG13bW14MW10" target="_blank" style="color: var(--primary-coral); text-decoration: none; font-weight: 600;">mink._1@</a></p>
+    </footer>
+
+</body>
+</html>
